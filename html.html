@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ stock_name }} Stock Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f9;
+            color: #333;
+            margin: 0;
+        }
+        .navbar {
+            background-color: #004d99;
+        }
+        .navbar-brand {
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        .navbar-brand:hover {
+            color: #cce0ff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+        .card {
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            overflow: hidden;
+            background: #ffffff;
+            border: none;
+        }
+        .card-header {
+            background-color: #0099cc;
+            color: #ffffff;
+            font-size: 1.7rem;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 2px solid #007acc;
+        }
+        .card-body {
+            padding: 30px;
+        }
+        .recommendation {
+            font-size: 1.6rem;
+            font-weight: 600;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .recommendation.buy {
+            color: #28a745;
+        }
+        .recommendation.sell {
+            color: #dc3545;
+        }
+        .recommendation i {
+            font-size: 2rem;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        .graph {
+            margin-top: 30px;
+        }
+        .table thead th {
+            background-color: #0099cc;
+            color: #ffffff;
+        }
+        .table tbody tr:nth-child(odd) {
+            background-color: #f1f8ff;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #6c757d;
+            background-color: #f8f9fa;
+            border-top: 2px solid #e0e0e0;
+        }
+        .footer a {
+            color: #0099cc;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Stock Analysis Dashboard</a>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                {{ stock_name }} Stock Dashboard
+            </div>
+            <div class="card-body">
+                <h2 class="text-center mb-4">Real-Time Price: ${{ real_time_price }}</h2>
+                <div class="recommendation {{ 'buy' if recommendation == 'Buy' else 'sell' }}">
+                    <i class="{{ 'fas fa-arrow-up' if recommendation == 'Buy' else 'fas fa-arrow-down' }}"></i>
+                    Recommendation: {{ recommendation }}
+                </div>
+                <div class="graph">
+                    <h3 class="text-center">Stock Graph</h3>
+                    {{ graph_html | safe }}
+                </div>
+                <div class="table-responsive mt-4">
+                    <h3 class="text-center">Stock Price Table</h3>
+                    {{ table_html | safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Stock Analysis Bot. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
