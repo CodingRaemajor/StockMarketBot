@@ -26,8 +26,8 @@ An elegant and powerful Streamlit-based web app to:
 
 ## 🧪 Preview
 
-![App Screenshot](https://github.com/CodingRaemajor/StockMarketBot/blob/main/screenshot.png)
-
+![App Screenshot](https://github.com/CodingRaemajor/StockMarketBot/blob/main/overview.png)
+![App Screenshot](https://github.com/CodingRaemajor/StockMarketBot/blob/main/portfolio.png)
 ---
 
 ## 🛠️ Tech Stack
@@ -41,13 +41,16 @@ An elegant and powerful Streamlit-based web app to:
 
 ## 📦 Setup & Installation
 
-```bash
+bash
 git clone https://github.com/CodingRaemajor/StockMarketBot.git
+
 cd StockMarketBot
+
 pip install -r requirements.txt
+
 streamlit run app.py
 
-☁️ Deploy to Streamlit Cloud
+## Deploy to Streamlit Cloud
 Push this repo to GitHub
 
 Go to "https://stockmarketbot.streamlit.app/"
@@ -56,8 +59,5 @@ Link your GitHub and select app.py to deploy
 
 Done! 🎉
 
-👨‍💻 Author
+## 👨‍💻 Author
 Built with 💙 by Parth Patel
-
-
-Would you like a matching `screenshot.png` for your repo or a walkthrough GIF for better visuals on the README?
